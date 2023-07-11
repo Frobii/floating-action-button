@@ -1,0 +1,22 @@
+@font-face {
+    font-family: quicksand;
+    src: url(./Quicksand-VariableFont_wght.ttf)
+}
+
+html {
+    font-family: quicksand;
+}
+
+.float-container {
+    display: none;
+    position: absolute;
+    top: var(--nav-bar-height);
+    width: var(--menu-item-width);
+    background-color: rgba(0, 255, 255, 0.438);
+}
+
+
+.float-container-visible {
+    display: flex;
+    flex-direction: column;
+}
