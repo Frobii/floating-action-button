@@ -1,24 +1,28 @@
 const floatingItemMenu = () => {
-  function revealItems() {
-    const dropMenus = document.getElementsByClassName('menu-item');
-    const dropMenusArray = Array.from(dropMenus);
+  function setEvents() {
+    const expandMenuButton = document.querySelector('.expand-menu-button');
+    const floatingMenuContainer = document.querySelector('.floating-menu-container');
 
-    dropMenusArray.forEach((menu) => {
-      menu.addEventListener('mouseover', () => {
-        menu.firstElementChild.classList.add('drop-container-visible');
-      });
+    const { body } = document;
+    const overlay = document.createElement('div');
+    overlay.classList.add('.overlay');
+
+    expandMenuButton.addEventListener('click', () => {
+      expandMenuButton.classList.add('expand-button-invisible');
+      floatingMenuContainer.classList.add('float-container-visible');
+      body.appendChild(overlay);
+      overlay.classList.add('overlay-visible');
     });
 
-    dropMenusArray.forEach((menu) => {
-      menu.addEventListener('mouseleave', () => {
-        menu.firstElementChild.classList.remove('drop-container-visible');
-      });
+    overlay.addEventListener('click', () => {
+      floatingMenuContainer.classList.remove('float-container-visible');
+      expandMenuButton.classList.remove('expand-button-invisible');
     });
   }
 
   return {
-    revealItems,
+    setEvents,
   };
 };
 
-floatingItemMenu().revealItems();
+floatingItemMenu().setEvents();

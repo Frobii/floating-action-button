@@ -1,12 +1,3 @@
-@font-face {
-    font-family: quicksand;
-    src: url(./Quicksand-VariableFont_wght.ttf)
-}
-
-html {
-    font-family: quicksand;
-}
-
 body {
     margin: 0px;
 }
@@ -15,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 40px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -28,6 +19,53 @@ body {
     transition: transform .2s;
 }
 
+.expand-button-invisible {
+    display: none;
+}
+
+.float-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(6, 170, 61, 0.767);
+    cursor: pointer;
+    transition: transform .2s;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.floating-menu-container {
+    display: none;
+    z-index: -1;
+    top: 40px;
+    left: 40px;
+    position: absolute;
+    height: 350px;
+    width: 50px;
+}
+
+.float-container-visible {
+    display: block;
+}
+
+.overlay {
+    display: none;
+}
+
+.overlay-visible {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+}
+
 .expand-menu-button:hover {
     transform: scale(1.1); 
 }
@@ -35,15 +73,23 @@ body {
     transform: scale(0.5); 
 }
 
-.floating-menu-container {
-    display: none;
-    position: absolute;
-    top: var(--nav-bar-height);
-    width: var(--menu-item-width);
-    background-color: rgba(0, 255, 255, 0.438);
-}
 
-.float-container-visible {
-    display: flex;
-    flex-direction: column;
+.notification {
+    background-image: url(./Icons/notification\ bell.svg);
+    background-size: 35px 35px;
+}
+.photo {
+    background-image: url(./Icons/camera.svg);
+}
+.chat {
+    background-image: url(./Icons/chat.svg);
+}
+.draw {
+    background-image: url(./Icons/draw.svg);
+}
+.document {
+    background-image: url(./Icons/document.svg);
+}
+.attachment {
+    background-image: url(./Icons/attachment.svg);
 }
